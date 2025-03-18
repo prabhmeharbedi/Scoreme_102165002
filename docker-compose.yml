@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  pdf-table-extractor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./samples:/app/samples
+    restart: unless-stopped
+    container_name: pdf-table-extractor
